@@ -1,121 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y85JTR86JE"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-Y85JTR86JE');
-</script>
-    
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SportsWebCal | UEFA Champions League Calendar</title>
+<title>SportSync</title>
 
 <style>
 
+:root{
+    --bg:#020617;
+    --card:#0f172a;
+    --card2:#111827;
+    --teal:#0F766E;
+    --teal-hover:#115E59;
+    --text:#ffffff;
+    --muted:#94A3B8;
+    --border:#1f2937;
+}
+
+*{
+    box-sizing:border-box;
+}
+
 body{
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
     margin:0;
-    background:#0f172a;
-    color:white;
-    text-align:center;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
 }
 
-.hero{
-    max-width:900px;
-    margin:auto;
-    padding:80px 20px;
-}
-
-.logo{
-    color:#94a3b8;
-    font-size:18px;
-    margin-bottom:20px;
-}
-
-h1{
-    font-size:56px;
-    margin-bottom:20px;
-}
-
-.subtitle{
-    font-size:22px;
-    color:#cbd5e1;
-    max-width:700px;
-    margin:auto;
-}
-
-.badges{
-    margin-top:40px;
-}
-
-.badge{
-    display:inline-block;
-    background:#1e293b;
-    border:1px solid #334155;
-    padding:12px 18px;
-    border-radius:10px;
-    margin:8px;
-}
-
-.section{
-    max-width:1000px;
+.container{
+    max-width:1200px;
     margin:auto;
     padding:40px 20px;
 }
 
-.feature{
-    background:#111827;
-    border:1px solid #1f2937;
-    border-radius:15px;
-    padding:30px;
-    margin:25px 0;
+.hero{
+    text-align:center;
+    padding:60px 20px;
+}
+
+.logo{
+    width:120px;
+    max-width:100%;
+    margin-bottom:20px;
+}
+
+h1{
+    margin:0;
+    font-size:4rem;
+}
+
+.brand{
+    color:var(--teal);
+}
+
+.subtitle{
+    margin-top:20px;
+    font-size:1.3rem;
+    color:var(--muted);
+    max-width:800px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.slogan{
+    margin-top:20px;
+    line-height:2;
+    color:#cbd5e1;
 }
 
 .button{
     display:inline-block;
-    margin-top:25px;
-    background:#22c55e;
+    background:var(--teal);
     color:white;
     text-decoration:none;
-    padding:18px 36px;
+    padding:16px 28px;
     border-radius:12px;
-    font-size:20px;
+    margin-top:30px;
     font-weight:bold;
 }
 
 .button:hover{
-    background:#16a34a;
+    background:var(--teal-hover);
 }
 
-.url-box{
-    background:#0b1220;
-    border:1px solid #334155;
-    border-radius:12px;
+.section{
+    margin-top:60px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:2rem;
+    margin-bottom:30px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:24px;
+}
+
+.card h3{
+    margin-top:0;
+}
+
+.card-button{
+    display:inline-block;
+    background:var(--teal);
+    color:white;
+    text-decoration:none;
+    padding:10px 18px;
+    border-radius:8px;
+    margin-top:10px;
+}
+
+details{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:14px;
     padding:15px;
-    margin-top:20px;
-    color:#93c5fd;
-    word-break:break-all;
+    margin-bottom:15px;
 }
 
-.support-box{
-    background:#111827;
-    border:1px solid #334155;
-    border-radius:15px;
-    padding:35px;
-    max-width:700px;
-    margin:auto;
+summary{
+    cursor:pointer;
+    font-size:1.2rem;
+    font-weight:600;
+}
+
+.sub-card{
+    background:var(--card2);
+    border-radius:10px;
+    padding:15px;
+    margin-top:12px;
+}
+
+.small{
+    color:var(--muted);
+    font-size:0.95rem;
+}
+
+.price{
+    color:#22c55e;
+    font-weight:bold;
+}
+
+.support{
+    text-align:center;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:30px;
+}
+
+.paypal{
+    background:#0070ba;
+}
+
+.mercado{
+    background:#ffe600;
+    color:#000;
 }
 
 .footer{
-    padding:60px 20px;
-    color:#94a3b8;
+    text-align:center;
+    color:var(--muted);
+    margin-top:80px;
+    padding-bottom:60px;
+    line-height:1.8;
+}
+
+input, textarea{
+    width:100%;
+    background:#0b1220;
+    border:1px solid #334155;
+    color:white;
+    padding:12px;
+    border-radius:8px;
+    margin-top:10px;
+}
+
+@media(max-width:768px){
+
+    h1{
+        font-size:2.5rem;
+    }
+
+    .subtitle{
+        font-size:1.1rem;
+    }
+
 }
 
 </style>
@@ -124,190 +209,307 @@ h1{
 
 <body>
 
+<div class="container">
+
 <div class="hero">
 
-    <div class="logo">
-        SportsWebCal
-    </div>
+<img src="logo.png" alt="SportSync Logo" class="logo">
 
-    <h1>🏆 UEFA Champions League</h1>
+<h1>
+SPORT<span class="brand">SYNC</span>
+</h1>
 
-    <p class="subtitle">
-        Never miss a Champions League match.
-        Subscribe once and receive automatic fixture updates all season long.
-    </p>
+<p class="subtitle">
+The sports calendar that updates itself.
+</p>
 
-    <div class="badges">
+<div class="slogan">
+Never miss a game.<br>
+Subscribe once. Stay updated forever.
+</div>
 
-        <span class="badge">✅ 144 Matches</span>
+<a href="#available" class="button">
+Explore Calendars
+</a>
 
-        <span class="badge">✅ Automatic Updates</span>
+</div>
 
-        <span class="badge">✅ Apple Calendar</span>
+<div id="available" class="section">
 
-        <span class="badge">✅ Google Calendar</span>
+<h2 class="section-title">
+Available Today
+</h2>
 
-        <span class="badge">✅ Outlook</span>
+<div class="grid">
 
-        <span class="badge">✅ Free</span>
+<div class="card">
+<h3>⚪⚫ Colo-Colo WebCal</h3>
+<p>All Colo-Colo competitions.</p>
 
-    </div>
+<a class="card-button"
+href="https://jebusrf.github.io/Colo-ColoWebCal/colocolo.ics"
+target="_blank">
+Open Calendar
+</a>
+</div>
+
+<div class="card">
+<h3>🔵🔴 Universidad de Chile WebCal</h3>
+<p>All Universidad de Chile competitions.</p>
+
+<a class="card-button"
+href="https://jebusrf.github.io/UdeChileWebCal/udechile.ics"
+target="_blank">
+Open Calendar
+</a>
+</div>
+
+<div class="card">
+<h3>🏆 Champions League WebCal</h3>
+<p>Full UEFA Champions League calendar.</p>
+
+<a class="card-button"
+href="https://jebusrf.github.io/SportsWebCal/champions.ics"
+target="_blank">
+Open Calendar
+</a>
+</div>
+
+</div>
 
 </div>
 
 <div class="section">
 
-    <h2>How It Works</h2>
+<h2 class="section-title">
+🌎 LATAM
+</h2>
 
-    <div class="feature">
-        1️⃣ Subscribe to the calendar
-    </div>
+<details>
+<summary>🇨🇱 Chile</summary>
 
-    <div class="feature">
-        2️⃣ Add it to your preferred calendar app
-    </div>
+<div class="sub-card">
+Liga de Primera
+<span class="price">USD 1</span>
+</div>
 
-    <div class="feature">
-        3️⃣ Receive automatic updates throughout the season
-    </div>
+<div class="sub-card">
+Ascenso Chile
+<span class="price">USD 1</span>
+</div>
+
+<div class="sub-card">
+Colo-Colo
+<span class="price">USD 3</span>
+</div>
+
+<div class="sub-card">
+Universidad de Chile
+<span class="price">USD 3</span>
+</div>
+
+<!-- FUTUROS EQUIPOS CHILE -->
+</details>
+
+<details>
+<summary>🇦🇷 Argentina</summary>
+
+<div class="sub-card">
+Liga Profesional
+<span class="price">USD 1</span>
+</div>
+
+<!-- FUTUROS EQUIPOS ARGENTINA -->
+
+</details>
+
+<details>
+<summary>🇧🇷 Brasil</summary>
+
+<div class="sub-card">
+Brasileirão
+<span class="price">USD 1</span>
+</div>
+
+<!-- FUTUROS EQUIPOS BRASIL -->
+
+</details>
+
+<details>
+<summary>🇺🇾 Uruguay</summary>
+<!-- FUTURO CONTENIDO -->
+</details>
+
+<details>
+<summary>🇵🇾 Paraguay</summary>
+<!-- FUTURO CONTENIDO -->
+</details>
+
+<details>
+<summary>🇨🇴 Colombia</summary>
+<!-- FUTURO CONTENIDO -->
+</details>
+
+<details>
+<summary>🇵🇪 Perú</summary>
+<!-- FUTURO CONTENIDO -->
+</details>
+
+<details>
+<summary>🇪🇨 Ecuador</summary>
+<!-- FUTURO CONTENIDO -->
+</details>
+
+<details>
+<summary>🇻🇪 Venezuela</summary>
+<!-- FUTURO CONTENIDO -->
+</details>
 
 </div>
 
 <div class="section">
 
-    <h2>📅 Choose Your Calendar</h2>
+<h2 class="section-title">
+🏆 CONMEBOL
+</h2>
 
-    <div class="feature">
+<details>
+<summary>International Competitions</summary>
 
-        <h3> Apple Calendar</h3>
+<div class="sub-card">
+Copa Libertadores
+<span class="price">USD 5</span>
+</div>
 
-        <p>
-            The easiest way to subscribe.
-        </p>
+<div class="sub-card">
+Copa Sudamericana
+<span class="price">USD 5</span>
+</div>
 
-        <a href="webcal://jebusrf.github.io/SportsWebCal/champions.ics"
-           class="button">
-            Subscribe with Apple Calendar
-        </a>
+<div class="sub-card">
+Recopa Sudamericana
+<span class="price">USD 5</span>
+</div>
 
-    </div>
-
-    <div class="feature">
-
-        <h3>🌐 Google Calendar</h3>
-
-        <p>
-            Click the "+" next to Other Calendars,
-            choose "From URL" and paste:
-        </p>
-
-        <div class="url-box">
-            https://jebusrf.github.io/SportsWebCal/champions.ics
-        </div>
-
-    </div>
-
-    <div class="feature">
-
-        <h3>💼 Outlook</h3>
-
-        <p>
-            Add Calendar → Subscribe from Web → Paste:
-        </p>
-
-        <div class="url-box">
-            https://jebusrf.github.io/SportsWebCal/champions.ics
-        </div>
-
-    </div>
+</details>
 
 </div>
 
 <div class="section">
 
-    <h2>Why SportsWebCal?</h2>
+<h2 class="section-title">
+🇪🇺 Europe
+</h2>
 
-    <div class="feature">
-        ⚽ Automatically updated fixtures
-    </div>
+<details>
+<summary>European Leagues</summary>
 
-    <div class="feature">
-        📅 Works across major calendar platforms
-    </div>
+<div class="sub-card">🇪🇸 Spain</div>
+<div class="sub-card">🏴 England</div>
+<div class="sub-card">🇮🇹 Italy</div>
+<div class="sub-card">🇩🇪 Germany</div>
+<div class="sub-card">🇫🇷 France</div>
+<div class="sub-card">🇳🇱 Netherlands</div>
+<div class="sub-card">🇹🇷 Turkey</div>
 
-    <div class="feature">
-        🚀 No registration required
-    </div>
-
-    <div class="feature">
-        ❤️ Free to use
-    </div>
+</details>
 
 </div>
 
 <div class="section">
 
-    <div class="section">
+<h2 class="section-title">
+🇺🇸 North America
+</h2>
 
-    <div class="support-box">
+<details>
+<summary>United States & Canada</summary>
 
-        <h2>❤️ Support SportsWebCal</h2>
+<div class="sub-card">NFL <span class="price">USD 5</span></div>
 
-        <p>
-            Enjoying the UEFA Champions League calendar?
-        </p>
+<div class="sub-card">NBA <span class="price">USD 5</span></div>
 
-        <p>
-            Support SportsWebCal and help keep the service free while we expand to more competitions.
-        </p>
+<div class="sub-card">MLB <span class="price">USD 5</span></div>
 
-        <a href="https://paypal.me/jrfdez"
-           target="_blank"
-           class="button">
-           ☕ Support with PayPal
-        </a>
+<div class="sub-card">NHL <span class="price">USD 5</span></div>
 
-        <br><br>
+<div class="sub-card">MLS <span class="price">USD 5</span></div>
 
-        <a href="https://mpago.la/2XaMYay"
-           target="_blank"
-           class="button">
-           💛 Support with Mercado Pago
-        </a>
+<div class="sub-card">NCAA Football <span class="price">USD 5</span></div>
 
-    </div>
+</details>
 
 </div>
 
-</div>
 <div class="section">
 
-    <p style="color:#94a3b8;font-size:14px;max-width:900px;margin:auto;line-height:1.6;">
+<h2 class="section-title">
+📬 Request a Calendar
+</h2>
 
-        SportsWebCal is an independent project and is not affiliated with,
-        endorsed by, or sponsored by UEFA, any football club, Apple,
-        Google, Microsoft, ESPN, or any other organization mentioned on
-        this website.
+<div class="card">
 
-        Match schedules, team names and venue information are provided
-        for informational purposes only. All trademarks and brand names
-        are the property of their respective owners.
+<p class="small">
+Tell us what team, league or competition you'd like to see in SportSync.
+</p>
 
-    </p>
+<input type="text" placeholder="Name">
+
+<input type="email" placeholder="Email">
+
+<textarea rows="5"
+placeholder="Team, League or Competition">
+</textarea>
+
+<a href="#" class="button">
+Submit Request
+</a>
 
 </div>
+
+</div>
+
+<div class="section">
+
+<div class="support">
+
+<h2>❤️ Support SportSync</h2>
+
+<p>
+Help us expand to more leagues, teams and competitions.
+</p>
+
+<a href="https://paypal.me/jrfdez"
+target="_blank"
+class="button paypal">
+Support with PayPal
+</a>
+
+<br><br>
+
+<a href="https://mpago.la/2XaMYay"
+target="_blank"
+class="button mercado">
+Support with Mercado Pago
+</a>
+
+</div>
+
+</div>
+
 <div class="footer">
 
-    <strong>SportsWebCal</strong>
+<strong>SPORTdates itself.<br>
+Never miss a game.<br>
+Subscribe once. Stay updated forever.
 
-    <br><br>
+<br><br>
 
-    Simple sports calendars.<br>
-    Automatically updated.<br>
-    More sports soon
-    <br><br>
+SportSync is an independent project and is not affiliated with,
+endorsed by, or sponsored by UEFA, CONMEBOL, FIFA, ESPN,
+Apple, Google, Microsoft or any sports organization.
 
-    © 2026 SportsWebCal
+</div>
 
 </div>
 
